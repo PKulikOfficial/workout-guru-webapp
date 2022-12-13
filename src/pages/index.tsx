@@ -1,29 +1,7 @@
 import { type NextPage } from "next";
 import Head from "next/head";
-import { useEffect, useState } from "react";
-
-interface userType {
-  id: Number,
-  name: String,
-  age: Number
-}
 
 const Home: NextPage = () => {
-  const [users, setUsers] = useState<userType[] | undefined>(undefined);
-  const [isLoading, setLoading] = useState(false);
-
-  useEffect(() => {
-    setLoading(true)
-    fetch('/api/users')
-      .then((res) => res.json())
-      .then((data) => {
-        setUsers(data)
-        setLoading(false)
-        console.log(data)
-      })
-  }, [])
-  if(isLoading) return <p>Loading...</p>
-
   return (
     <>
       <Head>
@@ -32,14 +10,8 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <div>
-          {users && users.map((user) => (
-            <div>
-              <p>{user.age.toString()}</p>
-              <p>{user.name}</p>
-            </div>
-          ))}
-        </div>
+        <a href="/api/auth/login">Login</a>
+        <a href="/api/auth/logout">Logout</a>
       </main>
     </>
   );

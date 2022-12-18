@@ -1,11 +1,9 @@
 import Head from 'next/head';
-
-// import NavBar from './NavBar';
-// import Footer from './Footer';
+import Navbar from './Navbar';
 
 interface LayoutProps {
   children: React.ReactNode
-}
+};
 
 const Layout = ({ children } : LayoutProps) => (
   <>
@@ -15,6 +13,7 @@ const Layout = ({ children } : LayoutProps) => (
     <link rel="icon" href="/favicon.ico" />
     </Head>
     <main id="app">
+      <Navbar />
       {children}
     </main>
   </>

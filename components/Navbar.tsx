@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 interface item {
     title: string
     href: string
-};
+}
 
 const DEFAULTLINKS: item[] = [
     {
@@ -19,6 +19,7 @@ const DEFAULTLINKS: item[] = [
 ];
 
 const LOGGEDINLINKS: item[] = [
+    ...DEFAULTLINKS,
     {
         title: "Routine",
         href: "/routine"
@@ -37,16 +38,9 @@ const Navbar = () => {
         <header>
             {user && (
                 <nav>
-                    {DEFAULTLINKS.map((item) => (
-                        <Link href={item.href}>
-                            <div className={`nav-item${router.pathname == item.href ? "-active": ""}`}>
-                                {item.title}
-                            </div>
-                        </Link>
-                    ))}
                     {LOGGEDINLINKS.map((item) => (
-                        <Link href={item.href}>
-                            <div className={`nav-item-right${router.pathname == item.href ? "-active": ""}`}>
+                        <Link href={item.href} key={item.title}>
+                            <div className={`nav-item${router.pathname == item.href ? "-active": ""}`}>
                                 {item.title}
                             </div>
                         </Link>
@@ -61,7 +55,7 @@ const Navbar = () => {
             {!user && (
                 <nav>
                     {DEFAULTLINKS.map((item) => (
-                        <Link href={item.href}>
+                        <Link href={item.href} key={item.title}>
                             <div className={`nav-item${router.pathname == item.href ? "-active": ""}`}>
                                 {item.title}
                             </div>

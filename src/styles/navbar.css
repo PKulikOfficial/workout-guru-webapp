@@ -1,0 +1,37 @@
+nav {
+    background-color: rgb(29, 28, 28);
+    width: 100%;
+    height: 4rem;
+    overflow: hidden;
+}
+
+nav a {
+    color: rgb(255, 228, 228);
+}
+
+nav a div {
+    float: left;
+    margin: 1rem;
+    font-size: 1.2rem;
+    top: 50%;
+    transform: translate(0%, -100%);
+    position: relative;
+}
+
+nav a:hover {
+    color: rgb(243, 225, 193);
+}
+
+#navbar-home {
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+.nav-item-active {
+    color: rgb(243, 225, 193);
+}
+
+.nav-item-right {
+    float: right;
+    text-align: right;
+}

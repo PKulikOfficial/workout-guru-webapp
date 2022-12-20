@@ -9,10 +9,6 @@ interface item {
 
 const DEFAULTLINKS: item[] = [
     {
-        title: "Workout Guru",
-        href: "/"
-    },
-    {
         title: "About",
         href: "/about"
     }
@@ -38,6 +34,11 @@ const Navbar = () => {
         <header>
             {user && (
                 <nav>
+                    <Link href="/">
+                        <div className={`nav-item${router.pathname == "/" ? "-active": ""}`} id="navbar-home">
+                            Workout Guru
+                        </div>
+                    </Link>
                     {LOGGEDINLINKS.map((item) => (
                         <Link href={item.href} key={item.title}>
                             <div className={`nav-item${router.pathname == item.href ? "-active": ""}`}>
@@ -54,6 +55,11 @@ const Navbar = () => {
             )} 
             {!user && (
                 <nav>
+                    <Link href="/">
+                        <div className={`nav-item${router.pathname == "/" ? "-active": ""}`} id="navbar-home">
+                            Workout Guru
+                        </div>
+                    </Link>
                     {DEFAULTLINKS.map((item) => (
                         <Link href={item.href} key={item.title}>
                             <div className={`nav-item${router.pathname == item.href ? "-active": ""}`}>

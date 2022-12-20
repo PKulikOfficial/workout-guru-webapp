@@ -1,6 +1,7 @@
 import { type AppType } from "next/dist/shared/lib/utils";
 import { UserProvider } from '@auth0/nextjs-auth0/client';
 import "../styles/globals.css";
+import "../styles/navbar.css";
 import Layout from "../../components/Layout";
 
 const MyApp: AppType = ({ Component, pageProps }) => {

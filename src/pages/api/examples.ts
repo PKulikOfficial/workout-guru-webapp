@@ -3,7 +3,7 @@ import { prisma } from "../../server/db/client";
 import { withApiAuthRequired, getSession } from '@auth0/nextjs-auth0';
 
 export default withApiAuthRequired(async function GetExamples (req: NextApiRequest, res: NextApiResponse){
-  await getSession(req, res)
+  const session = await getSession(req, res);
   const examples = await prisma.example.findMany();
   res.status(200).json(examples);
 });

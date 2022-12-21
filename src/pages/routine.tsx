@@ -2,6 +2,8 @@ import { useUser } from '@auth0/nextjs-auth0/client';
 import { withPageAuthRequired } from '@auth0/nextjs-auth0';
 import { GetServerSideProps, NextPage } from 'next';
 import { useEffect, useState } from 'react';
+import Routines from "../../components/Routines";
+
 
 const Routine: NextPage = () => {
   const { user, error } = useUser();
@@ -22,9 +24,10 @@ const Routine: NextPage = () => {
   if (error) return <div>{error.message}</div>;
 
   // Correct return
-  if (user) return (
+  if (user && routines) return (
     <div>
       <p>this is the routine page</p>
+      <Routines data={routines}/>
     </div>
   );
 

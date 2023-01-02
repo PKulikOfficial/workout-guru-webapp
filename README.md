@@ -1,3 +1,12 @@
+# Guru Workout web App
+This project is currently work-in-progress
+
+Goals of the project:
+- Use typescript instead of javascript to get more hands-on experience
+- Learn prisma as a schema tool
+- Set-up Auth0 as the login mechanism
+- Learn how to make api-endpoints in Nexjs
+
 # Create T3 App
 
 This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
